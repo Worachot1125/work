@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
+import Image from "next/image"; // Import the Image component from next/image
 import "../style/style2.css";
 
 interface Pokemon {
@@ -43,11 +44,15 @@ export default function Page() {
 
   return (
     <div className="pokemon-details">
-  
       <h1>{pokemon.name}</h1>
-      <img src={pokemon.sprites.other["official-artwork"].front_default} alt={pokemon.name} />
+      <Image
+        src={pokemon.sprites.other["official-artwork"].front_default}
+        alt={pokemon.name}
+        width={400} // Adjust width and height as needed
+        height={400} // Adjust width and height as needed
+        layout="responsive" // Or another layout that suits your needs
+      />
       <div className="detail-style">
-        
         <h2>Abilities</h2>
         <ul>
           {pokemon.abilities.map((ability, index) => (

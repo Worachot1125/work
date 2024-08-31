@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
-import "../student/DOM.jpg"; // This import is unnecessary if you're not using this directly in the component.
+import Image from "next/image"; // Import the Image component from next/image
 import "../student/Aboutme.css";
+
 export default function Page() {
   const router = useRouter();
 
@@ -10,7 +11,13 @@ export default function Page() {
     <div>
       <header>
         <div className="img">
-          <img src="/DOM.jpg" className="imgPro" alt="Profile" width="200" height="300" />
+          <Image
+            src="/DOM.jpg"
+            className="imgPro"
+            alt="Profile"
+            width={200}
+            height={300}
+          />
         </div>
       </header>
 
@@ -32,10 +39,20 @@ export default function Page() {
       <div className="contact">
         <h3>Contact me</h3>
         <a href="https://www.facebook.com/profile.php?id=100013024876104" target="_blank" rel="noopener noreferrer">
-          <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" />
+          <Image
+            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg"
+            alt="Facebook"
+            height={30}
+            width={40}
+          />
         </a>
         <a href="https://www.instagram.com/dom_narai/" target="_blank" rel="noopener noreferrer">
-          <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="30" width="40" />
+          <Image
+            src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg"
+            alt="Instagram"
+            height={30}
+            width={40}
+          />
         </a>
       </div>
 
